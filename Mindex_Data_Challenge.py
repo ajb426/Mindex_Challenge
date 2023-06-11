@@ -35,3 +35,4 @@ combined_df = pd.merge(combined_df, higgins_df, on="Week", how="left")
 host = "ls-2619b6b15c9bdc80a23f6afb7eee54cf0247da21.ca3yee6xneaj.us-east-1.rds.amazonaws.com"
 engine = create_engine('postgresql://anthony_barone:bnthonyaarone@'+host+'/postgres')
 combined_df.to_sql('Anthony_Barone', engine, if_exists='append', index=False)
+engine.dispose()
